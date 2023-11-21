@@ -12,11 +12,11 @@ extension IndexValuePair: Comparable {
     }
 }
 
-internal enum Coll {}
+public enum Coll {}
 
 extension Coll {
-    internal enum V1 {
-        internal static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
+    public enum V1 {
+        public static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
             var minV = -Float.greatestFiniteMagnitude
             var selected = Deque<(index: Int, value: Float)>()
             selected.reserveCapacity(k)
@@ -36,16 +36,15 @@ extension Coll {
             selected.reverse()
             let indexes = selected.map { $0.index }
             let logits = selected.map { $0.value }
-            let probs = softmax(logits)
 
-            return (indexes: indexes, probs: probs)
+            return (indexes: indexes, probs: logits)
         }
     }
 }
 
 extension Coll {
-    internal enum V2 {
-        internal static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
+    public enum V2 {
+        public static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
             let data = arr.enumerated().map { i, v in IndexValuePair(index: i, value: v) }
             var values = Heap<IndexValuePair>(data)
 
@@ -57,16 +56,15 @@ extension Coll {
             }
             let indexes = selected.map { $0.index }
             let logits = selected.map { $0.value }
-            let probs = softmax(logits)
 
-            return (indexes: indexes, probs: probs)
+            return (indexes: indexes, probs: logits)
         }
     }
 }
 
 extension Coll {
-    internal enum V3 {
-        internal static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
+    public enum V3 {
+        public static func topK(arr: [Float], k: Int) -> (indexes: [Int], probs: [Float]) {
             var minV = -Float.greatestFiniteMagnitude
             var selected = Heap<IndexValuePair>()
 
@@ -86,9 +84,8 @@ extension Coll {
                 indexes.append(value.index)
                 logits.append(value.value)
             }
-            let probs = softmax(logits)
 
-            return (indexes: indexes, probs: probs)
+            return (indexes: indexes, probs: logits)
         }
     }
 }
