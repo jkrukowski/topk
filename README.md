@@ -29,72 +29,72 @@ MacBook Air M1 2020, 16GB RAM
 Google Benchmark results
 
 ```
-name                            time           std        iterations
---------------------------------------------------------------------
-Huggingface n=32_000, k=3       1255458.500 ns ±   1.72 %       1016
-Huggingface n=32_000, k=10      1260417.000 ns ±   2.52 %       1122
-Huggingface n=32_000, k=50      1269708.000 ns ±   1.32 %       1088
-Huggingface n=32_000, k=100     1495000.000 ns ±   1.87 %        941
-Huggingface n=65_000, k=3       2512270.500 ns ±   1.19 %        556
-Huggingface n=65_000, k=10      2514250.000 ns ±   1.18 %        552
-Huggingface n=65_000, k=50      2548417.000 ns ±   1.29 %        548
-Huggingface n=65_000, k=100     2800875.000 ns ±   1.22 %        499
-Huggingface n=128_000, k=3      4947625.000 ns ±   0.93 %        282
-Huggingface n=128_000, k=10     5040458.500 ns ±   1.29 %        280
-Huggingface n=128_000, k=50     4987791.500 ns ±   1.09 %        280
-Huggingface n=128_000, k=100    5254834.000 ns ±   1.10 %        264
+name                           time          std         iterations
+-------------------------------------------------------------------
+Huggingface.n=32_000, k=3       15291.500 ns ±   7.92 %        1000
+Huggingface.n=32_000, k=10      16292.000 ns ±  13.23 %        1000
+Huggingface.n=32_000, k=50      46958.000 ns ±   5.46 %        1000
+Huggingface.n=32_000, k=100    244812.500 ns ±   2.50 %        1000
+Huggingface.n=65_000, k=3       31583.000 ns ±   6.38 %        1000
+Huggingface.n=65_000, k=10      33291.000 ns ±   6.00 %        1000
+Huggingface.n=65_000, k=50      68708.000 ns ±   5.41 %        1000
+Huggingface.n=65_000, k=100    291937.500 ns ±   4.00 %        1000
+Huggingface.n=128_000, k=3      63750.000 ns ±   5.47 %        1000
+Huggingface.n=128_000, k=10     67417.000 ns ±   3.93 %        1000
+Huggingface.n=128_000, k=50     97500.000 ns ±   4.97 %        1000
+Huggingface.n=128_000, k=100   352417.000 ns ±  19.57 %        1000
 
-Accelerate n=32_000, k=3        1278625.000 ns ±   1.34 %       1093
-Accelerate n=32_000, k=10       1258729.500 ns ±   1.05 %       1086
-Accelerate n=32_000, k=50       1290375.000 ns ±   1.43 %       1089
-Accelerate n=32_000, k=100      1309666.000 ns ±   1.51 %       1077
-Accelerate n=65_000, k=3        2560624.500 ns ±   1.75 %        544
-Accelerate n=65_000, k=10       2556584.000 ns ±   1.00 %        547
-Accelerate n=65_000, k=50       2576979.000 ns ±   1.36 %        538
-Accelerate n=65_000, k=100      2587438.000 ns ±   1.20 %        532
-Accelerate n=128_000, k=3       5026666.000 ns ±   1.29 %        271
-Accelerate n=128_000, k=10      5115375.000 ns ±   1.18 %        275
-Accelerate n=128_000, k=50      5131667.000 ns ±  20.94 %        273
-Accelerate n=128_000, k=100     5151166.000 ns ±   1.90 %        275
+Accelerate.n=32_000, k=3        34458.000 ns ±   9.30 %        1000
+Accelerate.n=32_000, k=10       36687.500 ns ±  14.66 %        1000
+Accelerate.n=32_000, k=50       44584.000 ns ±  17.83 %        1000
+Accelerate.n=32_000, k=100      66812.500 ns ±  16.82 %        1000
+Accelerate.n=65_000, k=3        70708.000 ns ±  17.80 %        1000
+Accelerate.n=65_000, k=10       68333.000 ns ±   8.20 %        1000
+Accelerate.n=65_000, k=50       79792.000 ns ± 234.94 %        1000
+Accelerate.n=65_000, k=100     105875.000 ns ±  20.15 %        1000
+Accelerate.n=128_000, k=3      136833.500 ns ±   6.74 %        1000
+Accelerate.n=128_000, k=10     133459.000 ns ±   9.95 %        1000
+Accelerate.n=128_000, k=50     152375.000 ns ±  23.88 %        1000
+Accelerate.n=128_000, k=100    178125.000 ns ± 1752.46 %       1000
 
-Collections V1 n=32_000, k=3    1262500.000 ns ±   1.95 %       1117
-Collections V1 n=32_000, k=10   1273250.000 ns ±   1.19 %       1098
-Collections V1 n=32_000, k=50   1375125.000 ns ±   1.36 %       1022
-Collections V1 n=32_000, k=100  1663479.500 ns ±   1.90 %        842
-Collections V1 n=65_000, k=3    2563583.000 ns ±   2.05 %        545
-Collections V1 n=65_000, k=10   2574084.000 ns ±   0.96 %        543
-Collections V1 n=65_000, k=50   2690500.000 ns ±   1.62 %        523
-Collections V1 n=65_000, k=100  3005791.000 ns ±   2.23 %        465
-Collections V1 n=128_000, k=3   5052167.000 ns ±   0.84 %        277
-Collections V1 n=128_000, k=10  5060625.000 ns ±   1.00 %        275
-Collections V1 n=128_000, k=50  5183667.000 ns ±   0.64 %        270
-Collections V1 n=128_000, k=100 5538166.000 ns ±   1.38 %        253
+CollectionsV1.n=32_000, k=3     19958.000 ns ±  58.46 %        1000
+CollectionsV1.n=32_000, k=10    29500.000 ns ±   5.23 %        1000
+CollectionsV1.n=32_000, k=50   140459.000 ns ±   4.17 %        1000
+CollectionsV1.n=32_000, k=100  393312.500 ns ±   6.86 %        1000
+CollectionsV1.n=65_000, k=3     41084.000 ns ±   8.14 %        1000
+CollectionsV1.n=65_000, k=10    45875.000 ns ±   6.62 %        1000
+CollectionsV1.n=65_000, k=50   166958.000 ns ±   3.52 %        1000
+CollectionsV1.n=65_000, k=100  454166.500 ns ±   2.30 %        1000
+CollectionsV1.n=128_000, k=3    69833.000 ns ±   5.66 %        1000
+CollectionsV1.n=128_000, k=10   78958.000 ns ±   5.09 %        1000
+CollectionsV1.n=128_000, k=50  192250.000 ns ±   3.96 %        1000
+CollectionsV1.n=128_000, k=100 536167.000 ns ±   2.61 %        1000
 
-Collections V2 n=32_000, k=3    1508542.000 ns ±   1.07 %        927
-Collections V2 n=32_000, k=10   1509542.000 ns ±   1.07 %        928
-Collections V2 n=32_000, k=50   1512458.000 ns ±   3.20 %        923
-Collections V2 n=32_000, k=100  1516875.000 ns ±   1.48 %        913
-Collections V2 n=65_000, k=3    3077104.000 ns ±   0.81 %        454
-Collections V2 n=65_000, k=10   3074687.500 ns ±   0.79 %        454
-Collections V2 n=65_000, k=50   3081250.000 ns ±   1.41 %        451
-Collections V2 n=65_000, k=100  3085021.000 ns ±   1.58 %        454
-Collections V2 n=128_000, k=3   6078479.000 ns ±   1.22 %        230
-Collections V2 n=128_000, k=10  6075375.000 ns ±   1.55 %        230
-Collections V2 n=128_000, k=50  6074770.500 ns ±   0.79 %        230
-Collections V2 n=128_000, k=100 6097750.000 ns ±   1.07 %        229
+CollectionsV2.n=32_000, k=3    198041.000 ns ±  10.84 %        1000
+CollectionsV2.n=32_000, k=10   195312.500 ns ±  36.19 %        1000
+CollectionsV2.n=32_000, k=50   194854.500 ns ±   5.48 %        1000
+CollectionsV2.n=32_000, k=100  200625.000 ns ±  26.22 %        1000
+CollectionsV2.n=65_000, k=3    486541.500 ns ±  11.98 %        1000
+CollectionsV2.n=65_000, k=10   502229.000 ns ±   2.83 %        1000
+CollectionsV2.n=65_000, k=50   498000.000 ns ±   7.68 %        1000
+CollectionsV2.n=65_000, k=100  492459.000 ns ±   3.67 %        1000
+CollectionsV2.n=128_000, k=3   975396.000 ns ±   3.90 %        1000
+CollectionsV2.n=128_000, k=10  986937.000 ns ±   3.36 %        1000
+CollectionsV2.n=128_000, k=50  986458.000 ns ±   6.47 %        1000
+CollectionsV2.n=128_000, k=100 979417.000 ns ±   2.69 %        1000
 
-Collections V3 n=32_000, k=3    1255917.000 ns ±   0.95 %       1114
-Collections V3 n=32_000, k=10   1259041.000 ns ±   1.10 %       1099
-Collections V3 n=32_000, k=50   1273625.000 ns ±   1.58 %       1098
-Collections V3 n=32_000, k=100  1289125.000 ns ±   0.89 %       1077
-Collections V3 n=65_000, k=3    2550458.000 ns ±   0.96 %        548
-Collections V3 n=65_000, k=10   2555667.000 ns ±   2.84 %        547
-Collections V3 n=65_000, k=50   2569958.000 ns ±   0.97 %        543
-Collections V3 n=65_000, k=100  2588271.000 ns ±   0.90 %        540
-Collections V3 n=128_000, k=3   5024104.500 ns ±   1.09 %        278
-Collections V3 n=128_000, k=10  5025541.500 ns ±   0.84 %        278
-Collections V3 n=128_000, k=50  5043416.000 ns ±   0.77 %        277
-Collections V3 n=128_000, k=100 5066167.000 ns ±   0.90 %        275
+CollectionsV3.n=32_000, k=3     11500.000 ns ±  11.20 %        1000
+CollectionsV3.n=32_000, k=10    13375.000 ns ±  12.91 %        1000
+CollectionsV3.n=32_000, k=50    22708.000 ns ±   8.86 %        1000
+CollectionsV3.n=32_000, k=100   31041.000 ns ±   9.28 %        1000
+CollectionsV3.n=65_000, k=3     21833.000 ns ±   7.25 %        1000
+CollectionsV3.n=65_000, k=10    24500.000 ns ±   7.48 %        1000
+CollectionsV3.n=65_000, k=50    34916.000 ns ±   6.71 %        1000
+CollectionsV3.n=65_000, k=100   46792.000 ns ±   6.02 %        1000
+CollectionsV3.n=128_000, k=3    42042.000 ns ±   7.56 %        1000
+CollectionsV3.n=128_000, k=10   44541.000 ns ±   5.74 %        1000
+CollectionsV3.n=128_000, k=50   57750.000 ns ±   5.39 %        1000
+CollectionsV3.n=128_000, k=100  71458.000 ns ±   5.20 %        1000
 ```
 
 XCTests results

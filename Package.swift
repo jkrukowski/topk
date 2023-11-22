@@ -19,6 +19,13 @@ let package = Package(
         .executableTarget(
             name: "TopKCLI",
             dependencies: [
+                "TopKBenchmark",
+                .product(name: "Benchmark", package: "swift-benchmark")
+            ]
+        ),
+        .target(
+            name: "TopKBenchmark",
+            dependencies: [
                 "TopK",
                 .product(name: "Benchmark", package: "swift-benchmark")
             ]
